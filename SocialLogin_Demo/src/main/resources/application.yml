@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  config:
+    import:
+      - application-secret.yml # application-secret.yml 에 OAuth, Database(DataSource) 정보가 있음
+  mvc:
+    view:
+      prefix: /WEB-INF/view/ # ViewResolver Prefix [ 뷰의 앞에 붙은 내용 ]
+      suffix: .jsp # ViewResolver Suffix [ 뷰의 뒤에 붙은 내용 ]
+
+  jpa:
+    hibernate:
+      ddl-auto: create # create 하면 스프링 부트가 다시 켜질때 테이블을 삭제 후 다시 생성 [ 데이터를 보존하고 싶다면 update ]
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true # 실행된 sql문을 표시할 것인가
