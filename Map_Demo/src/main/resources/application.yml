@@ -1,0 +1,16 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+
+maps:
+  naver:
+    api-key: # 네이버 API Key
+    api-secret: # 네이버 Secret Key
+    request-uri: https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode
+  kakao:
+    api-key: # 카카오 Rest API Key
+    js-api-key: # 카카오 Javascript API Key
+    address-request-uri: https://dapi.kakao.com/v2/local/search/address.json
+    keyword-request-uri: https://dapi.kakao.com/v2/local/search/keyword.json
